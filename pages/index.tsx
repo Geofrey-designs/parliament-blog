@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import {PostCard, Categories, PostWidget} from '../components'
-import { getPosts } from '../services'
+import {PostCard, Categories, PostWidget} from '../components/index'
+import { getPosts } from '../services/index'
 
 // const posts = [
 //   {title: 'this is title', excerpt: 'this is some excerpt'},
@@ -41,5 +41,4 @@ export async function getStaticProps() {
     props: { posts }
   }
 }
-
 

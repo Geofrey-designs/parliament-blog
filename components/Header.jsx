@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 
-const categories = [{ name: 'React', slug: 'react' }, { name: 'Web development', slug: 'WebDev' }]
+import Link from 'next/link';
+import { getCategories } from '../services/index';
 
 const Header = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getCategories().then((newCategories) => {
+      setCategories(newCategories);
+    });
+  }, []);
+
   return (
     <div className="container mx-auto px-10 mb-8">
       <div className="border-b w-full inline-block border-blue-400 py-8">
